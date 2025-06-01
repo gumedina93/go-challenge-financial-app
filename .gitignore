@@ -1,0 +1,9 @@
+# Output
+*.log
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store

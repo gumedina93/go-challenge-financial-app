@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room - {{.Username}}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="chat-container">
+    <header class="chat-header">
+        <h1>Chat Room</h1>
+        <div class="user-info">
+            <span>Welcome <strong>{{.Username}}</strong></span>
+            <form method="POST" action="/logout" style="display: inline;">
+                <button type="submit" class="logout-btn">Logout</button>
+            </form>
+        </div>
+    </header>
+
+    <div class="chat-content">
+        <div class="messages-container">
+            <div id="messages" class="messages"></div>
+        </div>
+
+        <div class="message-input-container">
+            <div class="input-help">
+                <small>Type your message or use <code>/stock=SYMBOL</code> to get stock quotes (e.g., /stock=aapl.us)</small>
+            </div>
+            <div class="message-input">
+                <input type="text" id="messageInput" placeholder="Type your message..." maxlength="500">
+                <button id="sendButton">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="connectionStatus" class="connection-status">
+        <span class="status-indicator connecting"></span>
+        <span class="status-text">Connecting...</span>
+    </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
